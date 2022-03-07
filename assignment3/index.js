@@ -23,7 +23,7 @@ app.get("/books/:name",singlebooks,(req, res) => {
 
 function singlebooks(req, res, next) {
     console.log("books")
-    req.name = "GamesOfThrones"
+    req.name = "HarryPotter"
     // req.name = req.params.name
     console.log(req.name)
     next();
