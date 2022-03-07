@@ -28,8 +28,6 @@ app.get("/books",function(req, res){
     )
     // console.log(res)
 })
-
-
 app.listen(3000,() =>{
     console.log("listening")
 })
