@@ -1,0 +1,315 @@
+Microsoft Windows [Version 10.0.22000.348]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\shind>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mong
+Implicit session: session { "id" : UUID("d3d3be1c-50aa-49b6-af78-63f4f8b68947") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprec
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-09T19:03:18.767+05:30: Access control is not enabled for the database
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive
+        metrics about your deployment (disk utilization, CPU, operation statistics, e
+
+        The monitoring data will be available on a MongoDB website with a unique URL
+        and anyone you share the URL with. MongoDB may use this information to make p
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring
+        To permanently disable this reminder, run the following command: db.disableFr
+---
+> show dbs
+admin       0.000GB
+assignment  0.000GB
+config      0.000GB
+local       0.000GB
+> use assignment
+switched to db assignment
+> show collections
+users
+> db.users.find({})
+{ "_id" : ObjectId("62276acb8618014b9f07d4f7"), "first_name" : "darshan", "last_name"
+{ "_id" : ObjectId("6227716e8618014b9f07d4f8"), "first_name" : "darshan", "last_name"
+{ "_id" : ObjectId("622774bf6ccb951e7581d4a9"), "first_name" : "darshan", "last_name"
+> db.users.findOne()
+{
+        "_id" : ObjectId("62276acb8618014b9f07d4f7"),
+        "first_name" : "darshan",
+        "last_name" : "shinde",
+        "Email" : "abs@gmail.com",
+        "ip_address" : "123.2435.6367",
+        "age" : "20"
+}
+> db.users.insertMany([{"first_name":"john","last_name":"david","gender":"male","ip_a
+25"},{"first_name":"Miller","last_name":"mathews","Email":"bgtre@gmail.com","ip_addre
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6228b095a7e41d052d746c1a"),
+                ObjectId("6228b095a7e41d052d746c1b"),
+                ObjectId("6228b095a7e41d052d746c1c")
+        ]
+}
+> db.users.insertMany([{"first_name":"john","last_name":"david","gender":"male","ip_a
+25"},{"first_name":"Miller","last_name":"mathews","Email":"bgtre@gmail.com","ip_addre
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6228b0d6a7e41d052d746c1d"),
+                ObjectId("6228b0d6a7e41d052d746c1e"),
+                ObjectId("6228b0d6a7e41d052d746c1f")
+        ]
+}
+> db.users.find({})
+{ "_id" : ObjectId("62276acb8618014b9f07d4f7"), "first_name" : "darshan", "last_name"
+{ "_id" : ObjectId("6227716e8618014b9f07d4f8"), "first_name" : "darshan", "last_name"
+{ "_id" : ObjectId("622774bf6ccb951e7581d4a9"), "first_name" : "darshan", "last_name"
+{ "_id" : ObjectId("6228b095a7e41d052d746c1a"), "first_name" : "john", "last_name" :
+{ "_id" : ObjectId("6228b095a7e41d052d746c1b"), "first_name" : "David", "last_name" :
+{ "_id" : ObjectId("6228b095a7e41d052d746c1c"), "first_name" : "Miller", "last_name"
+{ "_id" : ObjectId("6228b0d6a7e41d052d746c1d"), "first_name" : "john", "last_name" :
+{ "_id" : ObjectId("6228b0d6a7e41d052d746c1e"), "first_name" : "David", "last_name" :
+{ "_id" : ObjectId("6228b0d6a7e41d052d746c1f"), "first_name" : "Miller", "last_name"
+> db.users.find({}).pretty()
+{
+        "_id" : ObjectId("62276acb8618014b9f07d4f7"),
+        "first_name" : "darshan",
+        "last_name" : "shinde",
+        "Email" : "abs@gmail.com",
+        "ip_address" : "123.2435.6367",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("6227716e8618014b9f07d4f8"),
+        "first_name" : "darshan",
+        "last_name" : "shinde",
+        "Email" : "abs@gmail.com",
+        "ip_address" : "123.2435.6367",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("622774bf6ccb951e7581d4a9"),
+        "first_name" : "darshan",
+        "last_name" : "shinde",
+        "Email" : "abs@gmail.com",
+        "ip_address" : "123.2435.6367",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("6228b095a7e41d052d746c1a"),
+        "first_name" : "john",
+        "last_name" : "david",
+        "gender" : "male",
+        "ip_address" : "6721657",
+        "Email" : "bac@gnmail.com",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("6228b095a7e41d052d746c1b"),
+        "first_name" : "David",
+        "last_name" : "John",
+        "Email" : "gfh@gamil.com",
+        "ip_address" : "456256732567",
+        "gender" : "female",
+        "age" : "25"
+}
+{
+        "_id" : ObjectId("6228b095a7e41d052d746c1c"),
+        "first_name" : "Miller",
+        "last_name" : "mathews",
+        "Email" : "bgtre@gmail.com",
+        "ip_address" : "8757895",
+        "gender" : "female",
+        "age" : "40"
+}
+{
+        "_id" : ObjectId("6228b0d6a7e41d052d746c1d"),
+        "first_name" : "john",
+        "last_name" : "david",
+        "gender" : "male",
+        "ip_address" : "6721657",
+        "Email" : "bac@gnmail.com",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("6228b0d6a7e41d052d746c1e"),
+        "first_name" : "David",
+        "last_name" : "John",
+        "Email" : "gfh@gamil.com",
+        "ip_address" : "456256732567",
+        "gender" : "female",
+        "age" : "25"
+}
+{
+        "_id" : ObjectId("6228b0d6a7e41d052d746c1f"),
+        "first_name" : "Miller",
+        "last_name" : "mathews",
+        "Email" : "bgtre@gmail.com",
+        "ip_address" : "8757895",
+        "gender" : "female",
+        "age" : "40"
+}
+> db.users.find({"age":{$lt:25}}).pretty()
+> db.users.find({"age":"20"}).pretty()
+{
+        "_id" : ObjectId("62276acb8618014b9f07d4f7"),
+        "first_name" : "darshan",
+        "last_name" : "shinde",
+        "Email" : "abs@gmail.com",
+        "ip_address" : "123.2435.6367",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("6227716e8618014b9f07d4f8"),
+        "first_name" : "darshan",
+        "last_name" : "shinde",
+        "Email" : "abs@gmail.com",
+        "ip_address" : "123.2435.6367",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("622774bf6ccb951e7581d4a9"),
+        "first_name" : "darshan",
+        "last_name" : "shinde",
+        "Email" : "abs@gmail.com",
+        "ip_address" : "123.2435.6367",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("6228b095a7e41d052d746c1a"),
+        "first_name" : "john",
+        "last_name" : "david",
+        "gender" : "male",
+        "ip_address" : "6721657",
+        "Email" : "bac@gnmail.com",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("6228b0d6a7e41d052d746c1d"),
+        "first_name" : "john",
+        "last_name" : "david",
+        "gender" : "male",
+        "ip_address" : "6721657",
+        "Email" : "bac@gnmail.com",
+        "age" : "20"
+}
+> db.users.findOne({"age":"20"}).pretty()
+uncaught exception: TypeError: db.users.findOne(...).pretty is not a function :
+@(shell):1:1
+> db.users.findone({"age":"20"}).pretty()
+uncaught exception: TypeError: db.users.findone is not a function :
+@(shell):1:1
+> db.users.findOne({"first_name":"john"}).prett()
+uncaught exception: TypeError: db.users.findOne(...).prett is not a function :
+@(shell):1:1
+> db.users.findOne({"first_name":"john"}).pretty()
+uncaught exception: TypeError: db.users.findOne(...).pretty is not a function :
+@(shell):1:1
+> db.users.findOne({"first_name":"john"})
+{
+        "_id" : ObjectId("6228b095a7e41d052d746c1a"),
+        "first_name" : "john",
+        "last_name" : "david",
+        "gender" : "male",
+        "ip_address" : "6721657",
+        "Email" : "bac@gnmail.com",
+        "age" : "20"
+}
+> db.users.remove({"first_name":"john"},1)
+WriteResult({ "nRemoved" : 1 })
+> db.users.find({}).pretty()
+{
+        "_id" : ObjectId("62276acb8618014b9f07d4f7"),
+        "first_name" : "darshan",
+        "last_name" : "shinde",
+        "Email" : "abs@gmail.com",
+        "ip_address" : "123.2435.6367",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("6227716e8618014b9f07d4f8"),
+        "first_name" : "darshan",
+        "last_name" : "shinde",
+        "Email" : "abs@gmail.com",
+        "ip_address" : "123.2435.6367",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("622774bf6ccb951e7581d4a9"),
+        "first_name" : "darshan",
+        "last_name" : "shinde",
+        "Email" : "abs@gmail.com",
+        "ip_address" : "123.2435.6367",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("6228b095a7e41d052d746c1b"),
+        "first_name" : "David",
+        "last_name" : "John",
+        "Email" : "gfh@gamil.com",
+        "ip_address" : "456256732567",
+        "gender" : "female",
+        "age" : "25"
+}
+{
+        "_id" : ObjectId("6228b095a7e41d052d746c1c"),
+        "first_name" : "Miller",
+        "last_name" : "mathews",
+        "Email" : "bgtre@gmail.com",
+        "ip_address" : "8757895",
+        "gender" : "female",
+        "age" : "40"
+}
+{
+        "_id" : ObjectId("6228b0d6a7e41d052d746c1d"),
+        "first_name" : "john",
+        "last_name" : "david",
+        "gender" : "male",
+        "ip_address" : "6721657",
+        "Email" : "bac@gnmail.com",
+        "age" : "20"
+}
+{
+        "_id" : ObjectId("6228b0d6a7e41d052d746c1e"),
+        "first_name" : "David",
+        "last_name" : "John",
+        "Email" : "gfh@gamil.com",
+        "ip_address" : "456256732567",
+        "gender" : "female",
+        "age" : "25"
+}
+{
+        "_id" : ObjectId("6228b0d6a7e41d052d746c1f"),
+        "first_name" : "Miller",
+        "last_name" : "mathews",
+        "Email" : "bgtre@gmail.com",
+        "ip_address" : "8757895",
+        "gender" : "female",
+        "age" : "40"
+}
+> db
+assignment
+> db.dropDatabase()
+{ "ok" : 1 }
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+>  Copy con dos.bat
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:5
+> echo sample.txt
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:5
+>
+
